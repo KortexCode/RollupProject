@@ -1,0 +1,27 @@
+{
+  "name": "rollupproject",
+  "version": "1.0.0",
+  "description": "En este proyecto se implementa el empaquetador Rollup para la construcción de una aplicación que usa una API para mostrar información de productos en una tienda Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maeno323/RollupProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maeno323/RollupProject/issues"
+  },
+  "homepage": "https://github.com/Maeno323/RollupProject#readme",
+  "devDependencies": {
+    "@rollup/plugin-html": "^1.0.1",
+    "@rollup/plugin-image": "^3.0.1",
+    "rollup": "^3.9.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-css-only": "^4.3.0"
+  }
+}
