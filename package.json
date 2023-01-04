@@ -25,5 +25,6 @@
     "rollup": "^3.9.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^4.3.0"
-  }
+  },
+  "type": "module"
 }

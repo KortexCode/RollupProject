@@ -7,7 +7,8 @@ import './styles/style.css'; //rollup encuentra esta referencia y trabajará con
 const main = async () => {
     const response = await fetch(API);
     const products = await response.json();
-    const output = products.map((products) => {
+  
+    const output = products?.map((product) => {
         return `
         <article class="Card"> 
             <img src="${product.images[0]}" />
@@ -16,8 +17,8 @@ const main = async () => {
             </h2>
         </article>
         `;
-    }).json('');
-    const newItem = document.querySelector('section');
+    }).join('');
+    const newItem = document.createElement('section');
     newItem.classList.add('Items');
     newItem.innerHTML = output;
 
@@ -27,8 +28,7 @@ const main = async () => {
 
     newHeader.appendChild(newImage);
     $body.appendChild(newHeader);
-    $body.appendChild(newItem
-        )
+    $body.appendChild(newItem);
 };
 
 main();

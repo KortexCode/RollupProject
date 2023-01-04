@@ -14,6 +14,11 @@ body {
 header {
   margin: 1em 0;
 }
+header img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 
 .Items {
   grid-template-columns: repeat(2, 1fr);
