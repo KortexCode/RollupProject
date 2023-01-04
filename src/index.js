@@ -1,25 +1,34 @@
-const $app = document.getElementById("app");
-const API = "https://api.escuelajs.co/api/v1/products?offset=5&limit=10";
+const $body = document.querySelector('body');
+const API = "https://api.escuelajs.co/api/v1/products/?offset=5&limit=10";
 
-const main = async() => {
+import logo from "./assets/bocchiLogo.jpg";
+import './styles/style.css'; //rollup encuentra esta referencia y trabajará con él
+
+const main = async () => {
     const response = await fetch(API);
-    const data = await response.json();
-
-    const output = data?.map((product)=>{
+    const products = await response.json();
+    const output = products.map((products) => {
         return `
-            <article class="Card">
-                <img src="${product.images[0]}" alt="${product.title}">
-                <h2>
-                    ${product.title} <small>Precio $ ${product.price}</small>
-                </h2>
-            </article>`
-    }).join("");
+        <article class="Card"> 
+            <img src="${product.images[0]}" />
+            <h2>
+                ${product.title} <small>Precio $${product.price}}</small>
+            </h2>
+        </article>
+        `;
+    }).json('');
+    const newItem = document.querySelector('section');
+    newItem.classList.add('Items');
+    newItem.innerHTML = output;
 
-    let $section = document.createElement("section");
-    $section.classList.add("items");
-    $section.innerHTML = output;
-    $app.appendChild($section);
+    const newHeader = document.createElement('header');
+    const newImage = document.createElement('img');
+    newImage.src = logo;
 
-}
+    newHeader.appendChild(newImage);
+    $body.appendChild(newHeader);
+    $body.appendChild(newItem
+        )
+};
 
 main();

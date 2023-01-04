@@ -4,7 +4,8 @@
   "description": "En este proyecto se implementa el empaquetador Rollup para la construcción de una aplicación que usa una API para mostrar información de productos en una tienda Online",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "web-dev-server --config web-dev-server.config.js",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@rollup/plugin-html": "^1.0.1",
     "@rollup/plugin-image": "^3.0.1",
+    "@web/dev-server": "^0.1.35",
     "rollup": "^3.9.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^4.3.0"
